@@ -77,7 +77,7 @@ export default function Navbar() {
           {/* Left Logo */}
           <div className="flex items-center justify-start pl-[60px]">
             <img 
-              src="/assets/logo.png" 
+              src="logo.png" 
               alt="Praheti Racing Logo" 
               className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
@@ -104,7 +104,7 @@ export default function Navbar() {
           {/* Right Logo */}
           <div className="flex items-center justify-end pr-[60px]">
             <img 
-              src="/assets/logo2.png" 
+              src="logo2.png" 
               alt="Secondary Logo" 
               className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
