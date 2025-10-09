@@ -341,6 +341,9 @@ export default function HomeSection() {
 
         {/* Recruitment Button with Liquid Effects */}
         <div className="opacity-0 animate-[fadeInUp_1s_ease-out_2s_forwards]">
+            <a
+            href="https://forms.gle/99zMzTsuwzNApFKb8
+">
           <button 
             ref={buttonRef}
             className="group relative px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-lg uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 liquid-button"
@@ -358,6 +361,7 @@ export default function HomeSection() {
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
+          </a>
         </div>
       </div>
 

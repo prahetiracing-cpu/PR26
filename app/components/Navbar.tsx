@@ -1,6 +1,6 @@
 "use client";
 import { Link } from "react-scroll";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -12,6 +12,28 @@ const navItems = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Initialize audio
+  useEffect(() => {
+    audioRef.current = new Audio('/click.wav');
+    audioRef.current.volume = 0.5; // Set volume to 50%
+    
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  // Click sound handler
+  const playClickSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0; // Reset to beginning
+      audioRef.current.play().catch(console.error);
+    }
+  };
 
   return (
     <>
@@ -93,6 +115,7 @@ export default function Navbar() {
                   smooth={true}
                   duration={600}
                   offset={-110}
+                  onClick={playClickSound}
                   className="nav-link relative no-underline text-white text-[1.08rem] font-bold px-[18px] py-3 transition-all duration-300 tracking-wide block rounded cursor-pointer hover:text-[#ff0011] hover:bg-[rgba(255,183,3,0.1)] hover:-translate-y-0.5"
                 >
                   {item.label}
@@ -137,7 +160,10 @@ export default function Navbar() {
           {/* Hamburger Menu Icon - Right side */}
           <div 
             className="text-white text-[2rem] cursor-pointer hover:text-[#ff0011] transition-colors ml-4"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              playClickSound();
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
           >
             &#9776;
           </div>
@@ -153,7 +179,10 @@ export default function Navbar() {
                   smooth={true}
                   duration={600}
                   offset={-110}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    playClickSound();
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="mobile-link text-[1.3rem] px-6 py-3 text-white tracking-[2px] font-bold no-underline transition-all duration-300 relative block cursor-pointer hover:bg-[rgba(255,183,3,0.15)] hover:translate-x-2"
                 >
                   {item.label}

@@ -3,40 +3,26 @@ import { useMemo } from "react";
 
 export default function SponsorsSection() {
   const row1 = useMemo(() => [
-    "https://via.placeholder.com/200x100/ef4444/ffffff?text=SpeedX",
-    "https://via.placeholder.com/200x100/3b82f6/ffffff?text=VoltWorks",
-    "https://via.placeholder.com/200x100/10b981/ffffff?text=Apex+Dynamics",
-    "https://via.placeholder.com/200x100/f59e0b/ffffff?text=Redline+Labs",
-    "https://via.placeholder.com/200x100/8b5cf6/ffffff?text=TorqueOne",
-    "https://via.placeholder.com/200x100/ef4444/ffffff?text=CarbonCore",
-    "https://via.placeholder.com/200x100/3b82f6/ffffff?text=IgniteAI",
-    "https://via.placeholder.com/200x100/10b981/ffffff?text=NitroTech",
-    "https://via.placeholder.com/200x100/f59e0b/ffffff?text=VectorShift",
-    "https://via.placeholder.com/200x100/8b5cf6/ffffff?text=Roadster+Inc"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Nas4Pcssz7-BuWTcGYG2U8wbNPXt5fVihA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSW5xwqVyySDnCA78DIGzvRQTUHO3DBz-gA&s",
+    "https://cdn-media.buildersmart.in/media/mobile/bmobilebrands/shree-tmt1.jpg",
+    "https://www.abledesigneering.in/wp-content/uploads/2018/05/Deccan-Auto.jpg",
+    "https://d3t0tbmlie281e.cloudfront.net/igi/umd/WEdYNpDtpraW3NnY.full",
   ], []);
   const row2 = useMemo(() => [
-    "https://via.placeholder.com/200x100/ef4444/ffffff?text=HyperFuse",
-    "https://via.placeholder.com/200x100/3b82f6/ffffff?text=TrackMate",
-    "https://via.placeholder.com/200x100/10b981/ffffff?text=GripPro",
-    "https://via.placeholder.com/200x100/f59e0b/ffffff?text=Fusion+Motors",
-    "https://via.placeholder.com/200x100/8b5cf6/ffffff?text=Helix+Systems",
-    "https://via.placeholder.com/200x100/ef4444/ffffff?text=Quantum+Wheels",
-    "https://via.placeholder.com/200x100/3b82f6/ffffff?text=DynoEdge",
-    "https://via.placeholder.com/200x100/10b981/ffffff?text=Boostify",
-    "https://via.placeholder.com/200x100/f59e0b/ffffff?text=Circuitry",
-    "https://via.placeholder.com/200x100/8b5cf6/ffffff?text=PitStop+Co"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkWpMFC5I1VEiFmhmDAcl-rzkKZdcsMNIkFQ&s",
+    "https://vectorseek.com/wp-content/uploads/2023/10/C.R.I.-Pumps-Logo-Vector.svg-.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNnu5AjpboFcEqmtktenvRoiIA3O_g1Ygh3A&s",
+
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhRduOpDDCd6sPXGWdUzXKmBOyNyJ9eEOJQ&s",
+
   ], []);
   const row3 = useMemo(() => [
-    "https://via.placeholder.com/200x100/ef4444/ffffff?text=StormDrive",
-    "https://via.placeholder.com/200x100/3b82f6/ffffff?text=PulseMotion",
-    "https://via.placeholder.com/200x100/10b981/ffffff?text=AeroFlex",
-    "https://via.placeholder.com/200x100/f59e0b/ffffff?text=MagnaFuel",
-    "https://via.placeholder.com/200x100/8b5cf6/ffffff?text=RaceCraft",
-    "https://via.placeholder.com/200x100/ef4444/ffffff?text=CoreFusion",
-    "https://via.placeholder.com/200x100/3b82f6/ffffff?text=ThrustWorks",
-    "https://via.placeholder.com/200x100/10b981/ffffff?text=NeonTech",
-    "https://via.placeholder.com/200x100/f59e0b/ffffff?text=GearGrid",
-    "https://via.placeholder.com/200x100/8b5cf6/ffffff?text=Slipstream"
+    "https://heyday-ventures.com/wp-content/uploads/2021/05/pennar-industries-saif-partners-pennar-industries-png-379_424.png",
+    "https://www.samkrgpistonsandrings.com/images/samlogo.png",
+    "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/042013/untitled-1_62.png?itok=oFFyCpDR",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDXmyFxfxP75CFYnf59ybzU3g8u_4LJm1XCg&s",
+    "https://3dconnexion.com/in/wp-content/uploads/sites/61/2020/03/3dconnexion_logo.png",
   ], []);
 
   const marquee = (items: string[], direction: "left" | "right", key: string) => (
@@ -51,7 +37,7 @@ export default function SponsorsSection() {
             <img
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
-              className="h-16 md:h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
+              className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-110"
             />
           </div>
         ))}
