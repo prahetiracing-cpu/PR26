@@ -28,12 +28,33 @@ export default function SponsorsSection() {
   const marquee = (items: string[], direction: "left" | "right", key: string) => (
     <div key={key} className="relative overflow-hidden select-none py-3">
       <div
-        className={`flex gap-8 whitespace-nowrap will-change-transform animate-[marquee_12s_linear_infinite] ${
+        className={`flex gap-8 whitespace-nowrap will-change-transform animate-[marquee_8s_linear_infinite] ${
           direction === "left" ? "[animation-direction:reverse]" : ""
         }`}
       >
-        {[...items, ...items].map((imageUrl, idx) => (
-          <div key={`${key}-${idx}`} className="flex-shrink-0">
+        {/* First set of items */}
+        {items.map((imageUrl, idx) => (
+          <div key={`${key}-first-${idx}`} className="flex-shrink-0">
+            <img
+              src={imageUrl}
+              alt={`Sponsor ${idx + 1}`}
+              className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-110"
+            />
+          </div>
+        ))}
+        {/* Second set of items for seamless loop */}
+        {items.map((imageUrl, idx) => (
+          <div key={`${key}-second-${idx}`} className="flex-shrink-0">
+            <img
+              src={imageUrl}
+              alt={`Sponsor ${idx + 1}`}
+              className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-110"
+            />
+          </div>
+        ))}
+        {/* Third set of items for extra smoothness */}
+        {items.map((imageUrl, idx) => (
+          <div key={`${key}-third-${idx}`} className="flex-shrink-0">
             <img
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
@@ -62,7 +83,7 @@ export default function SponsorsSection() {
       <style jsx>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-33.333%); }
         }
       `}</style>
     </section>

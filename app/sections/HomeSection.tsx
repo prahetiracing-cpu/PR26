@@ -81,28 +81,24 @@ export default function HomeSection() {
   }, []);
 
   useEffect(() => {
-    // Set initial positions with 3D transforms
+    // Set initial positions
     gsap.set([prethiRef.current, racingRef.current], { opacity: 0 });
-    gsap.set(prethiRef.current, { x: 200, rotationY: 45, z: -100 });
-    gsap.set(racingRef.current, { x: -200, rotationY: -45, z: -100 });
+    gsap.set(prethiRef.current, { x: 200 });
+    gsap.set(racingRef.current, { x: -200 });
     gsap.set(buttonRef.current, { opacity: 0, y: 50, scale: 0.8 });
 
     // Create timeline for animations
     const tl = gsap.timeline({ delay: 0.5 });
 
-    // Animate text elements with 3D transforms
+    // Animate text elements
     tl.to(prethiRef.current, {
       x: 0,
-      rotationY: 0,
-      z: 0,
       opacity: 1,
       duration: 1.2,
       ease: "power3.out"
     })
     .to(racingRef.current, {
       x: 0,
-      rotationY: 0,
-      z: 0,
       opacity: 1,
       duration: 1.2,
       ease: "power3.out"
@@ -202,76 +198,6 @@ export default function HomeSection() {
 
 
 
-      {/* Analog Speedometer */}
-      <div 
-        ref={soundWaveRef}
-        className="absolute bottom-8 left-8 z-30"
-      >
-        <div className="relative w-24 h-24 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full shadow-2xl border-2 border-red-500/30">
-          {/* Speedometer Face */}
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-            {/* Speed Markings */}
-            <div className="absolute inset-0">
-              {/* Major ticks */}
-              {Array.from({ length: 12 }, (_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-0.5 bg-white rounded-full"
-                  style={{
-                    height: '8px',
-                    transformOrigin: '0 50%',
-                    transform: `rotate(${i * 30 - 90}deg) translate(0, -40px)`,
-                    left: '50%',
-                    top: '50%'
-                  }}
-                />
-              ))}
-              {/* Minor ticks */}
-              {Array.from({ length: 60 }, (_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-0.5 bg-gray-400 rounded-full"
-                  style={{
-                    height: '4px',
-                    transformOrigin: '0 50%',
-                    transform: `rotate(${i * 6 - 90}deg) translate(0, -40px)`,
-                    left: '50%',
-                    top: '50%'
-                  }}
-                />
-              ))}
-            </div>
-            
-            {/* Speed Needle */}
-            <div 
-              className="absolute w-0.5 h-8 bg-red-500 rounded-full transform origin-bottom"
-              style={{
-                left: '50%',
-                bottom: '50%',
-                transform: 'translateX(-50%) rotate(0deg)',
-                animation: 'speedometerNeedle 3s ease-in-out infinite alternate'
-              }}
-            />
-            
-            {/* Center Dot */}
-            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-            
-            {/* Speed Text */}
-            <div className="absolute bottom-2 text-white text-xs font-bold">
-              <div className="text-center">
-                <div className="text-red-400 font-mono">200</div>
-                <div className="text-xs text-gray-400">MPH</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Racing Branding */}
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-            <span className="text-white text-xs font-bold">P</span>
-          </div>
-        </div>
-        
-      </div>
 
       {/* Background Racing Elements with Morphing */}
       <div ref={backgroundElementsRef} className="absolute inset-0 pointer-events-none">
@@ -298,7 +224,7 @@ export default function HomeSection() {
       {/* Main Content */}
       <div className="relative z-10 text-center">
         {/* Main Title with Holographic Effects */}
-        <div className="flex flex-col items-center space-y-4 mb-12">
+        <div className="flex flex-col items-center space-y-4 mb-12 mt-32">
           <div 
             ref={prethiRef}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-wider relative holographic-text hover:scale-[1.01] transition-transform duration-200"
@@ -363,6 +289,7 @@ export default function HomeSection() {
           </button>
           </a>
         </div>
+
       </div>
 
 
@@ -400,11 +327,6 @@ export default function HomeSection() {
           100% { transform: scale(1) rotate(360deg); }
         }
 
-        @keyframes speedometerNeedle {
-          0% { transform: translateX(-50%) rotate(0deg); }
-          50% { transform: translateX(-50%) rotate(180deg); }
-          100% { transform: translateX(-50%) rotate(270deg); }
-        }
 
         .glitch-text {
           animation: glitch 0.3s infinite;
@@ -444,6 +366,262 @@ export default function HomeSection() {
         @keyframes pulseGlow {
           0%, 100% { opacity: 0.15; transform: translateX(-50%) scaleX(1); }
           50% { opacity: 0.35; transform: translateX(-50%) scaleX(1.1); }
+        }
+
+        /* Premium Car Animation */
+        .car-container {
+          position: absolute;
+          top: 50%;
+          right: -180px;
+          width: 180px;
+          height: 50px;
+          transform: translateY(-50%);
+          animation: premiumCarMove 4s ease-in-out infinite;
+        }
+
+        .premium-car {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
+        .car-body-premium {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 160px;
+          height: 40px;
+          background: linear-gradient(135deg, #1f2937, #111827);
+          border-radius: 6px 20px 20px 6px;
+          box-shadow: 
+            0 8px 25px rgba(0,0,0,0.3),
+            inset 0 1px 0 rgba(255,255,255,0.1);
+          border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .car-hood-premium {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 35px;
+          height: 40px;
+          background: linear-gradient(135deg, #374151, #1f2937);
+          border-radius: 6px 0 0 6px;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .car-windshield-premium {
+          position: absolute;
+          top: 3px;
+          left: 30px;
+          width: 25px;
+          height: 20px;
+          background: linear-gradient(135deg, #1e40af, #1e3a8a);
+          border-radius: 0 4px 0 0;
+          transform: skewY(-3deg);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .car-roof-premium {
+          position: absolute;
+          top: 3px;
+          left: 50px;
+          width: 50px;
+          height: 20px;
+          background: linear-gradient(135deg, #111827, #0f172a);
+          border-radius: 0 4px 4px 0;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .car-rear-window-premium {
+          position: absolute;
+          top: 3px;
+          left: 95px;
+          width: 20px;
+          height: 20px;
+          background: linear-gradient(135deg, #1e40af, #1e3a8a);
+          border-radius: 0 4px 0 0;
+          transform: skewY(3deg);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .car-trunk-premium {
+          position: absolute;
+          top: 0;
+          left: 110px;
+          width: 50px;
+          height: 40px;
+          background: linear-gradient(135deg, #0f172a, #020617);
+          border-radius: 0 20px 20px 0;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .car-side-panel {
+          position: absolute;
+          top: 8px;
+          left: 60px;
+          width: 40px;
+          height: 24px;
+          background: linear-gradient(135deg, #374151, #1f2937);
+          border-radius: 2px;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .wheel-premium {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          bottom: -3px;
+        }
+
+        .front-wheel-premium {
+          left: 30px;
+        }
+
+        .rear-wheel-premium {
+          left: 125px;
+        }
+
+        .tire-premium {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #0f172a;
+          border-radius: 50%;
+          animation: wheelSpin 0.08s linear infinite;
+          border: 1px solid #374151;
+        }
+
+        .wheel-rim-premium {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          width: 16px;
+          height: 16px;
+          background: linear-gradient(135deg, #6b7280, #4b5563);
+          border-radius: 50%;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .brake-caliper {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 8px;
+          height: 8px;
+          background: #ef4444;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          box-shadow: 0 0 4px rgba(239, 68, 68, 0.5);
+        }
+
+        .racing-number-premium {
+          position: absolute;
+          top: 12px;
+          left: 70px;
+          color: #fbbf24;
+          font-weight: 900;
+          font-size: 12px;
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+          letter-spacing: 1px;
+        }
+
+        .side-mirror-premium {
+          position: absolute;
+          top: 6px;
+          left: 25px;
+          width: 6px;
+          height: 4px;
+          background: #374151;
+          border-radius: 2px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .door-handle-premium {
+          position: absolute;
+          top: 16px;
+          left: 65px;
+          width: 10px;
+          height: 2px;
+          background: #6b7280;
+          border-radius: 1px;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .exhaust-premium {
+          position: absolute;
+          top: 28px;
+          left: 155px;
+          width: 4px;
+          height: 6px;
+          background: #374151;
+          border-radius: 2px;
+          box-shadow: 0 0 2px rgba(0,0,0,0.5);
+        }
+
+        .spoiler {
+          position: absolute;
+          top: -2px;
+          left: 140px;
+          width: 20px;
+          height: 4px;
+          background: linear-gradient(135deg, #1f2937, #111827);
+          border-radius: 2px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .speed-lines-premium {
+          position: absolute;
+          top: 50%;
+          right: -25px;
+          width: 20px;
+          height: 1px;
+          background: linear-gradient(90deg, #ef4444, transparent);
+          transform: translateY(-50%);
+          animation: speedLinesPremium 0.3s ease-out infinite;
+        }
+
+        .air-flow {
+          position: absolute;
+          top: 8px;
+          right: -15px;
+          width: 12px;
+          height: 1px;
+          background: linear-gradient(90deg, #fbbf24, transparent);
+          transform: translateY(-50%);
+          animation: airFlow 0.4s ease-out infinite;
+        }
+
+        @keyframes premiumCarMove {
+          0% {
+            right: -180px;
+            transform: translateY(-50%) scale(1);
+          }
+          50% {
+            right: 50%;
+            transform: translateY(-50%) scale(1.02);
+          }
+          100% {
+            right: calc(100% + 180px);
+            transform: translateY(-50%) scale(1);
+          }
+        }
+
+        @keyframes wheelSpin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        @keyframes speedLinesPremium {
+          0% { opacity: 0; transform: translateY(-50%) translateX(0); }
+          50% { opacity: 1; transform: translateY(-50%) translateX(-5px); }
+          100% { opacity: 0; transform: translateY(-50%) translateX(-10px); }
+        }
+
+        @keyframes airFlow {
+          0% { opacity: 0; transform: translateY(-50%) translateX(0); }
+          50% { opacity: 0.8; transform: translateY(-50%) translateX(-3px); }
+          100% { opacity: 0; transform: translateY(-50%) translateX(-6px); }
         }
       `}</style>
     </section>

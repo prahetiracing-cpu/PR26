@@ -171,25 +171,42 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <ul className="flex flex-col fixed top-[110px] right-0 bg-[#c1121f] w-[70vw] max-w-[320px] h-[calc(100vh-110px)] z-[2000] pt-8 items-start justify-start gap-6 nav-font shadow-[-2px_0_12px_rgba(0,0,0,0.2)]">
-            {navItems.map((item) => (
-              <li key={item.id} className="w-full">
-                <Link
-                  to={item.id}
-                  smooth={true}
-                  duration={600}
-                  offset={-110}
-                  onClick={() => {
-                    playClickSound();
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="mobile-link text-[1.3rem] px-6 py-3 text-white tracking-[2px] font-bold no-underline transition-all duration-300 relative block cursor-pointer hover:bg-[rgba(255,183,3,0.15)] hover:translate-x-2"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="fixed top-[110px] right-0 bg-[#c1121f] w-[70vw] max-w-[320px] h-[calc(100vh-110px)] z-[2000] shadow-[-2px_0_12px_rgba(0,0,0,0.2)]">
+            {/* Close Button */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={() => {
+                  playClickSound();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-white text-2xl hover:text-[#ffb703] transition-colors duration-300 cursor-pointer"
+                aria-label="Close menu"
+              >
+                ✕
+              </button>
+            </div>
+            
+            {/* Navigation Links */}
+            <ul className="flex flex-col items-start justify-start gap-6 nav-font px-4">
+              {navItems.map((item) => (
+                <li key={item.id} className="w-full">
+                  <Link
+                    to={item.id}
+                    smooth={true}
+                    duration={600}
+                    offset={-110}
+                    onClick={() => {
+                      playClickSound();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="mobile-link text-[1.3rem] px-6 py-3 text-white tracking-[2px] font-bold no-underline transition-all duration-300 relative block cursor-pointer hover:bg-[rgba(255,183,3,0.15)] hover:translate-x-2"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </nav>
     </>

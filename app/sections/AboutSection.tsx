@@ -146,9 +146,7 @@ export default function AboutSection() {
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="w-full h-full bg-gradient-to-br from-red-600/20 to-gray-800/40 flex items-center justify-center">
                                 <div className="text-white text-center">
-                                            <div className="text-6xl mb-4">🏎️</div>
-                                            <p className="text-lg font-semibold">Racing Excellence</p>
-                                            <p className="text-sm opacity-80">Replace with actual racing team photo</p>
+                                            <img src="./car.jpg"/>
                                         </div>
             </div>
                                 </div>
@@ -186,7 +184,7 @@ export default function AboutSection() {
             <div className="w-full py-16">
                 <div className="max-w-6xl mx-auto px-4">
                     <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 text-center">
-                        <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">What is Formula 6</span>
+                        <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">What is Formula Student ?</span>
                     </h3>
                     <div className="mt-4 w-32 h-1 bg-gradient-to-r from-red-500 to-gray-500 rounded-full mx-auto"></div>
                     <p className="mt-8 text-xl leading-relaxed text-gray-700 max-w-5xl mx-auto text-center md:text-left">
