@@ -14,66 +14,155 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 via-red-900 to-gray-900 shadow-2xl border-b border-red-500/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-16">
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
+    <>
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+        
+        .nav-font {
+          font-family: 'Zen Dots', sans-serif;
+        }
+        
+        .nav-link {
+          position: relative;
+        }
+        
+        .nav-link::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 8px;
+          transform: translateX(-50%);
+          width: 0%;
+          height: 3px;
+          transition: width 0.3s ease-in-out;
+        }
+        
+        .nav-link:hover::after {
+          width: 70%;
+        }
+        
+        .nav-divider::after {
+          content: "";
+          position: absolute;
+          right: -4px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 20px;
+          background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-link::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0%;
+          height: 3px;
+          background-color: #ffb703;
+          transition: width 0.3s ease-in-out;
+        }
+        
+        .mobile-link:hover::after {
+          width: 100%;
+        }
+      `}</style>
+
+      <nav className="fixed top-0 left-0 right-0 bg-black text-white z-[1000] border-b border-white/10 h-[110px]" 
+           style={{ boxShadow: '0 4px 20px rgba(193, 18, 31, 0.3)' }}>
+        
+        {/* Desktop Layout */}
+        <div className="h-full w-full px-10 grid grid-cols-[1fr_2fr_1fr] items-center gap-5 max-md:hidden">
+          
+          {/* Left Logo */}
+          <div className="flex items-center justify-start pl-[60px]">
+            <img 
+              src="/assets/logo.png" 
+              alt="Praheti Racing Logo" 
+              className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
+            />
+          </div>
+
+          {/* Center Nav Links */}
+          <ul className="flex justify-center items-center list-none m-0 p-0 nav-font gap-2">
             {navItems.map((item, index) => (
-              <Link
-                key={item.id}
-                to={item.id}
-                smooth={true}
-                duration={600}
-                offset={-70}
-                className="relative group cursor-pointer text-white font-semibold tracking-wide uppercase text-sm lg:text-base transition-all duration-300 hover:text-red-400"
-              >
-                <span className="relative z-10">{item.label}</span>
-                {/* Racing stripe effect on hover */}
-                <div className="absolute -inset-x-2 -inset-y-1 bg-gradient-to-r from-red-600/0 via-red-500/20 to-red-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-x-0 group-hover:scale-x-100 origin-center"></div>
-                {/* Bottom border effect */}
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
-                {/* Glow effect */}
-                <div className="absolute -inset-1 bg-red-500/20 rounded blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Link>
+              <li key={item.id} className={`relative ${index !== navItems.length - 1 ? 'nav-divider' : ''}`}>
+                <Link
+                  to={item.id}
+                  smooth={true}
+                  duration={600}
+                  offset={-110}
+                  className="nav-link relative no-underline text-white text-[1.08rem] font-bold px-[18px] py-3 transition-all duration-300 tracking-wide block rounded cursor-pointer hover:text-[#ff0011] hover:bg-[rgba(255,183,3,0.1)] hover:-translate-y-0.5"
+                >
+                  {item.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-red-400 focus:outline-none focus:text-red-400 transition-colors duration-300"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-              </svg>
-            </button>
+          {/* Right Logo */}
+          <div className="flex items-center justify-end pr-[60px]">
+            <img 
+              src="/assets/logo2.png" 
+              alt="Secondary Logo" 
+              className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
+            />
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md border-t border-red-500/30">
+        {/* Mobile Layout */}
+        <div className="hidden max-md:flex h-full w-full px-5 items-center justify-between relative">
+          {/* Left Logo */}
+          <div className="flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="Praheti Racing Logo" 
+              className="h-[60px] w-auto object-contain"
+              style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
+            />
+          </div>
+
+          {/* Right Logo */}
+          <div className="flex items-center">
+            <img 
+              src="/logo2.png" 
+              alt="Secondary Logo" 
+              className="h-[60px] w-auto object-contain"
+              style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
+            />
+          </div>
+
+          {/* Hamburger Menu Icon - Right side */}
+          <div 
+            className="text-white text-[2rem] cursor-pointer hover:text-[#ff0011] transition-colors ml-4"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            &#9776;
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <ul className="flex flex-col fixed top-[110px] right-0 bg-[#c1121f] w-[70vw] max-w-[320px] h-[calc(100vh-110px)] z-[2000] pt-8 items-start justify-start gap-6 nav-font shadow-[-2px_0_12px_rgba(0,0,0,0.2)]">
             {navItems.map((item) => (
-              <Link
-                key={item.id}
-                to={item.id}
-                smooth={true}
-                duration={600}
-                offset={-70}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-3 py-2 text-white font-semibold uppercase tracking-wide hover:bg-red-600/20 hover:text-red-400 transition-all duration-300 rounded-md border-l-2 border-transparent hover:border-red-500"
-              >
-                {item.label}
-              </Link>
+              <li key={item.id} className="w-full">
+                <Link
+                  to={item.id}
+                  smooth={true}
+                  duration={600}
+                  offset={-110}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="mobile-link text-[1.3rem] px-6 py-3 text-white tracking-[2px] font-bold no-underline transition-all duration-300 relative block cursor-pointer hover:bg-[rgba(255,183,3,0.15)] hover:translate-x-2"
+                >
+                  {item.label}
+                </Link>
+              </li>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Racing stripe decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-60"></div>
-    </nav>
+          </ul>
+        )}
+      </nav>
+    </>
   );
 }
