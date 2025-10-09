@@ -234,7 +234,7 @@ export default function HomeSection() {
             }}
             onMouseLeave={handlePrethiLeave}
           >
-            <span className="bg-gradient-to-r from-red-600 via-yellow-500 to-red-500 bg-clip-text text-transparent glitch-text">
+            <span className="bg-[#ff0000] bg-clip-text text-transparent glitch-text">
               PRAHETI
             </span>
             <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-60"></div>
