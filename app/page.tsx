@@ -12,10 +12,10 @@ export default function Home() {
       
       <main className="overflow-x-hidden">
         <HomeSection />
+        <EventsSection />
         <AboutSection />
         <TeamStatsSection />
         <PR26Section />
-        <EventsSection />
         <SponsorsSection />
       </main>
     </div>
