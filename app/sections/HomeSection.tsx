@@ -10,6 +10,9 @@ export default function HomeSection() {
   const racingRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const backgroundElementsRef = useRef<HTMLDivElement>(null);
+  const parallaxOneRef = useRef<HTMLDivElement>(null);
+  const parallaxTwoRef = useRef<HTMLDivElement>(null);
+  const parallaxThreeRef = useRef<HTMLDivElement>(null);
   const particleContainerRef = useRef<HTMLDivElement>(null);
   const racingTrackRef = useRef<HTMLDivElement>(null);
   const speedometerRef = useRef<HTMLDivElement>(null);
@@ -126,17 +129,7 @@ export default function HomeSection() {
       });
     }
 
-    // Sound wave animation
-    if (soundWaveRef.current) {
-      gsap.to(Array.from(soundWaveRef.current.children), {
-        scaleY: 2,
-        duration: 0.5,
-        repeat: -1,
-        ease: "power2.inOut",
-        stagger: 0.1,
-        yoyo: true
-      });
-    }
+    // Speedometer needle animation is handled by CSS
 
     // Parallax scrolling effect
     gsap.to(backgroundElementsRef.current, {
@@ -148,6 +141,44 @@ export default function HomeSection() {
         scrub: 1
       }
     });
+
+    // Individual subtle parallax lines
+    if (parallaxOneRef.current) {
+      gsap.to(parallaxOneRef.current, {
+        x: 50,
+        opacity: 0.6,
+        scrollTrigger: {
+          trigger: "#home",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1
+        }
+      });
+    }
+    if (parallaxTwoRef.current) {
+      gsap.to(parallaxTwoRef.current, {
+        x: -60,
+        opacity: 0.5,
+        scrollTrigger: {
+          trigger: "#home",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1
+        }
+      });
+    }
+    if (parallaxThreeRef.current) {
+      gsap.to(parallaxThreeRef.current, {
+        x: 40,
+        opacity: 0.4,
+        scrollTrigger: {
+          trigger: "#home",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1
+        }
+      });
+    }
 
   }, []);
 
@@ -171,22 +202,83 @@ export default function HomeSection() {
 
 
 
-      {/* Sound Wave Visualization */}
+      {/* Analog Speedometer */}
       <div 
         ref={soundWaveRef}
-        className="absolute bottom-8 left-8 z-30 flex items-end space-x-1"
+        className="absolute bottom-8 left-8 z-30"
       >
-        {Array.from({ length: 20 }, (_, i) => (
-          <div
-            key={i}
-            className="w-1 bg-gradient-to-t from-red-500 to-yellow-400 rounded-full"
-            style={{ height: `${Math.random() * 40 + 10}px` }}
-          />
-        ))}
+        <div className="relative w-24 h-24 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full shadow-2xl border-2 border-red-500/30">
+          {/* Speedometer Face */}
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
+            {/* Speed Markings */}
+            <div className="absolute inset-0">
+              {/* Major ticks */}
+              {Array.from({ length: 12 }, (_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-0.5 bg-white rounded-full"
+                  style={{
+                    height: '8px',
+                    transformOrigin: '0 50%',
+                    transform: `rotate(${i * 30 - 90}deg) translate(0, -40px)`,
+                    left: '50%',
+                    top: '50%'
+                  }}
+                />
+              ))}
+              {/* Minor ticks */}
+              {Array.from({ length: 60 }, (_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-0.5 bg-gray-400 rounded-full"
+                  style={{
+                    height: '4px',
+                    transformOrigin: '0 50%',
+                    transform: `rotate(${i * 6 - 90}deg) translate(0, -40px)`,
+                    left: '50%',
+                    top: '50%'
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Speed Needle */}
+            <div 
+              className="absolute w-0.5 h-8 bg-red-500 rounded-full transform origin-bottom"
+              style={{
+                left: '50%',
+                bottom: '50%',
+                transform: 'translateX(-50%) rotate(0deg)',
+                animation: 'speedometerNeedle 3s ease-in-out infinite alternate'
+              }}
+            />
+            
+            {/* Center Dot */}
+            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+            
+            {/* Speed Text */}
+            <div className="absolute bottom-2 text-white text-xs font-bold">
+              <div className="text-center">
+                <div className="text-red-400 font-mono">200</div>
+                <div className="text-xs text-gray-400">MPH</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Racing Branding */}
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+            <span className="text-white text-xs font-bold">P</span>
+          </div>
+        </div>
+        
       </div>
 
       {/* Background Racing Elements with Morphing */}
       <div ref={backgroundElementsRef} className="absolute inset-0 pointer-events-none">
+        {/* Extra parallax stripes */}
+        <div ref={parallaxOneRef} className="absolute top-1/3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-400/20 to-transparent -rotate-6"></div>
+        <div ref={parallaxTwoRef} className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gray-500/15 to-transparent rotate-6"></div>
+        <div ref={parallaxThreeRef} className="absolute top-2/3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-400/10 to-transparent -rotate-2"></div>
         {/* Racing stripes that morph */}
         <div className="absolute top-1/4 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500/20 to-transparent transform -rotate-12 morphing-stripe"></div>
         <div className="absolute top-2/3 right-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500/15 to-transparent transform rotate-12 morphing-stripe"></div>
@@ -209,7 +301,7 @@ export default function HomeSection() {
         <div className="flex flex-col items-center space-y-4 mb-12">
           <div 
             ref={prethiRef}
-            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-wider relative holographic-text"
+            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-wider relative holographic-text hover:scale-[1.01] transition-transform duration-200"
             onMouseEnter={(e) => {
               createHoverExplosion(e.clientX, e.clientY);
               handlePrethiHover();
@@ -217,15 +309,16 @@ export default function HomeSection() {
             onMouseLeave={handlePrethiLeave}
           >
             <span className="bg-gradient-to-r from-red-600 via-yellow-500 to-red-500 bg-clip-text text-transparent glitch-text">
-              PRETHI
+              PRAHETI
             </span>
             <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-60"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-yellow-500/20 blur-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute -z-10 left-1/2 -translate-x-1/2 bottom-[-10px] w-[60%] h-10 rounded-full bg-red-500/20 blur-2xl animate-[pulseGlow_10s_ease-in-out_infinite]"></div>
           </div>
           
           <div 
             ref={racingRef}
-            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-wider relative"
+            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-wider relative hover:scale-[1.01] transition-transform duration-200"
             onMouseEnter={(e) => createHoverExplosion(e.clientX, e.clientY)}
           >
             <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 bg-clip-text text-transparent">
@@ -242,6 +335,8 @@ export default function HomeSection() {
             Speed • Accuracy Engineered
           </p>
           <div className="mt-4 w-24 h-0.5 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto"></div>
+
+          <p className="text-xl md:text-2xl text-gray-600 font-light tracking-wide">Recruiting Now</p>
         </div>
 
         {/* Recruitment Button with Liquid Effects */}
@@ -251,7 +346,7 @@ export default function HomeSection() {
             className="group relative px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-lg uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 liquid-button"
             onMouseEnter={(e) => createHoverExplosion(e.clientX, e.clientY)}
           >
-            <span className="relative z-10">Recruitment Open</span>
+            <span className="relative z-10">Apply Now</span>
             
             {/* Liquid effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 liquid-overlay"></div>
@@ -301,6 +396,12 @@ export default function HomeSection() {
           100% { transform: scale(1) rotate(360deg); }
         }
 
+        @keyframes speedometerNeedle {
+          0% { transform: translateX(-50%) rotate(0deg); }
+          50% { transform: translateX(-50%) rotate(180deg); }
+          100% { transform: translateX(-50%) rotate(270deg); }
+        }
+
         .glitch-text {
           animation: glitch 0.3s infinite;
         }
@@ -334,6 +435,11 @@ export default function HomeSection() {
 
         .holographic-text:hover {
           animation: glitch 0.1s infinite;
+        }
+
+        @keyframes pulseGlow {
+          0%, 100% { opacity: 0.15; transform: translateX(-50%) scaleX(1); }
+          50% { opacity: 0.35; transform: translateX(-50%) scaleX(1.1); }
         }
       `}</style>
     </section>

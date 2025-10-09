@@ -8,6 +8,8 @@ import EventsSection from "./sections/EventsSection";
 export default function Home() {
   return (
     <div className="relative">
+
+      
       <main className="overflow-x-hidden">
         <HomeSection />
         <AboutSection />
