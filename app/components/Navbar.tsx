@@ -1,12 +1,13 @@
 "use client";
 import { Link } from "react-scroll";
 import { useState, useRef, useEffect } from "react";
+import { isHTMLElement } from "framer-motion";
 
 const navItems = [
   { id: "home", label: "Home" },
   { id: "events", label: "Events" },
+  { id: "pr", label: "PR26" },
   { id: "about", label: "About" },
-  { id: "team", label: "TeamStats" },
   { id: "sponsors", label: "Sponsors" },
 ];
 
@@ -17,7 +18,7 @@ export default function Navbar() {
   // Initialize audio
   useEffect(() => {
     audioRef.current = new Audio('/click.wav');
-    audioRef.current.volume = 0.5; // Set volume to 50%
+    audioRef.current.volume = 0.9; // Set volume to 50%
     
     return () => {
       if (audioRef.current) {

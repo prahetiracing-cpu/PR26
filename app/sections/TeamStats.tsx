@@ -57,6 +57,8 @@ const StatCard: React.FC<StatCardProps> = ({ stat, isVisible, index }) => {
   }, [isVisible, stat.value, stat.duration, hasAnimated]);
 
   return (
+
+    
     
     <div id="team"
       // Responsive Container and Hover Effects

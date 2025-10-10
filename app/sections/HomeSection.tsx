@@ -14,24 +14,23 @@ export default function HomeSection() {
   const parallaxTwoRef = useRef<HTMLDivElement>(null);
   const parallaxThreeRef = useRef<HTMLDivElement>(null);
   const particleContainerRef = useRef<HTMLDivElement>(null);
-  const racingTrackRef = useRef<HTMLDivElement>(null);
-  const speedometerRef = useRef<HTMLDivElement>(null);
-  const soundWaveRef = useRef<HTMLDivElement>(null);
 
   const [hoverParticles, setHoverParticles] = useState<Array<{id: number, x: number, y: number, vx: number, vy: number, life: number}>>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
+   
   // Initialize audio
   useEffect(() => {
     audioRef.current = new Audio('/catStart.wav');
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.3; // Set volume to 30%
+    audioRef.current.volume = 0.7; // Set volume to 30%
+    
     
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current = null;
       }
+      
     };
   }, []);
 
@@ -41,6 +40,8 @@ export default function HomeSection() {
       audioRef.current.play().catch(console.error);
     }
   };
+
+  
 
   const handlePrethiLeave = () => {
     if (audioRef.current) {
@@ -261,34 +262,10 @@ export default function HomeSection() {
             Speed • Accuracy Engineered
           </p>
           <div className="mt-4 w-24 h-0.5 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto"></div>
-
-          <p className="text-xl md:text-2xl text-gray-600 font-light tracking-wide">Recruiting Now</p>
         </div>
 
         {/* Recruitment Button with Liquid Effects */}
-        <div className="opacity-0 animate-[fadeInUp_1s_ease-out_2s_forwards]">
-            <a
-            href="https://forms.gle/99zMzTsuwzNApFKb8
-">
-          <button 
-            ref={buttonRef}
-            className="group relative px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-lg uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 liquid-button"
-            onMouseEnter={(e) => createHoverExplosion(e.clientX, e.clientY)}
-          >
-            <span className="relative z-10">Apply Now</span>
-            
-            {/* Liquid effect overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 liquid-overlay"></div>
-            
-            {/* Button glow effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-red-500 to-yellow-500 rounded-lg blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-            
-            {/* Racing lines on hover */}
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
-          </a>
-        </div>
+       
 
       </div>
 

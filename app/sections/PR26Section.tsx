@@ -160,7 +160,7 @@ export default function PR26Section() {
 
   return (
     <section 
-      id="pr26-specifications" 
+      id="pr" 
       className="min-h-screen flex flex-col items-center px-4 sm:px-8 py-20 font-sans"
       style={{ backgroundColor: COLOR_WHITE }}
     >
