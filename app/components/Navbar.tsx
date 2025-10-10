@@ -117,7 +117,7 @@ export default function Navbar() {
                   duration={600}
                   offset={-110}
                   onClick={playClickSound}
-                  className="nav-link relative no-underline text-white text-[1.08rem] font-bold px-[18px] py-3 transition-all duration-300 tracking-wide block rounded cursor-pointer hover:text-[#ff0011] hover:bg-[rgba(255,183,3,0.1)] hover:-translate-y-0.5"
+                  className={`nav-link ${item.id === "pr"?  "text-[#ff0000]":"text-white"} relative no-underline text-[1.08rem] font-bold px-[18px] py-3 transition-all duration-300 tracking-wide block rounded cursor-pointer hover:text-[#ff0011] hover:bg-[rgba(255,183,3,0.1)] hover:-translate-y-0.5`}
                 >
                   {item.label}
                 </Link>

@@ -161,21 +161,20 @@ export default function PR26Section() {
   return (
     <section 
       id="pr" 
-      className="min-h-screen flex flex-col items-center px-4 sm:px-8 py-20 font-sans"
+      className="min-h-screen flex flex-col items-center px-4 sm:px-8 md:py-20 py-10 font-sans"
       style={{ backgroundColor: COLOR_WHITE }}
     >
       <div className="max-w-7xl mx-auto w-full">
         
 
-        <div className="flex justify-center mb-16 relative">
-          <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full flex items-center justify-center">
+        <div className="flex justify-center relative">
+          <div className="relative md:w-144 md:h-144 w-100 h-100  flex items-center justify-center">
             {/* Rotating border */}
-            <div className="absolute inset-0 rounded-full border-[6px] border-t-[#ff0000] border-r-transparent border-b-[#ff0000] border-l-transparent animate-spin-slow"></div>
-            {/* Image */}
+            
             <img
               src="./pr26.png"
               alt="PR-26 Car"
-              className="w-48 h-48 sm:w-56 sm:h-56 rounded-full object-cover border-[4px] border-[#ff0000] shadow-xl"
+              className="md:w-144 md:h-144 w-100 h-100"
             />
           </div>
         </div>

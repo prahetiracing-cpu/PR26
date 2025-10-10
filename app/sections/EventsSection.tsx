@@ -138,18 +138,18 @@ export default function EventsSection() {
 
                 {/* Main Heading with 'NOW' in red */}
                 <div className="text-center mb-12 pb-4">
-                    <h2 className="text-5xl md:text-6xl font-black tracking-wider text-black mb-4">
+                    <h2 className=" md:text-6xl text-4xl font-black tracking-wider text-black mb-4">
                         RECRUITMENTS OPEN <span className="text-white bg-red-500 px-5 py-1 rounded-xl shadow-lg">NOW</span>
                     </h2>
                     <div className="w-32 h-2 mx-auto bg-red-500 rounded-full mt-2"></div>
                 </div>
 
-                <div className="text-center mt-14 pt-12 border-t-4 border-red-500">
-                    <p className="text-2xl font-bold max-w-3xl mx-auto leading-relaxed text-black">
+                <div className="text-center  mt-10 md:mt-14 pt-10 md:pt-12 border-t-4 border-red-500">
+                    <p className="text-xl font-bold max-w-3xl mx-auto leading-relaxed text-black">
                         Join our journey. Explore roles in <span className="bg-red-500 text-white px-2 rounded-md">technical innovation</span> and <span className="bg-red-500 text-white px-2 rounded-md">strategic outreach</span>. Click below to start your application!
                     </p>
                     <a href="https://forms.gle/99zMzTsuwzNApFKb8">
-                    <button onClick={handleClick} className="mt-8 px-12 py-5 text-2xl font-black uppercase tracking-widest rounded-full transition-all duration-700 ease-in-out hover:scale-105 bg-red-500 text-white border-4 border-black shadow-[5px_5px_0_#000]">
+                    <button onClick={handleClick} className="mt-8 md:px-12 md:py-5 px-10 py-3 text-xl font-black uppercase tracking-widest rounded-full transition-all duration-700 ease-in-out hover:scale-105 bg-red-500 text-white border-4 border-black shadow-[5px_5px_0_#000]">
                         APPLY TODAY
                     </button>
                     </a>
@@ -161,12 +161,12 @@ export default function EventsSection() {
                     <TeamPanel title="Technical Team" teams={technicalTeams} expanded={expanded} side="left" />
 
                     {/* Center Image */}
-                    <div className="flex items-center justify-center h-[35rem] w-[26rem] min-w-[260px] shadow-2xl bg-black border-4 border-black rounded-2xl z-10 transition-all duration-700 hover:shadow-red-500/50 hover:border-red-500">
+                    <div className="flex items-center justify-center h-auto w-full shadow-2xl rounded-2xl z-10 transition-all duration-700 hover:shadow-red-500/50 hover:border-red-500">
                         <img
                             src={centralImageSrc}
                             alt="Central recruitment focus image"
-                            className="w-full h-full object-cover rounded-2xl"
-                            style={{ aspectRatio: '9/13' }} // Maintained large vertical ratio
+                            className="w-full h-full rounded-2xl"
+                            
                             onError={handleImageError}
                         />
                     </div>
@@ -175,7 +175,6 @@ export default function EventsSection() {
                     <TeamPanel title="Non-Technical Team" teams={nonTechnicalTeams} expanded={expanded} side="right" />
                 </div>
 
-                {/* Footer Statement (Recruitment CTA) */}
             </div>
         </section>
     );
