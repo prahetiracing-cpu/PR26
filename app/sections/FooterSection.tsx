@@ -1,7 +1,6 @@
 "use client";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-// @ts-expect-error
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import Image from "next/image";
