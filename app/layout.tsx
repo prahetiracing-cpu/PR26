@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import { Goldman } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next" 
 
 const goldman = Goldman({
   subsets: ["latin"],
