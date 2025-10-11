@@ -36,9 +36,20 @@ export default function HomeSection() {
 
   // Audio hover handlers
   const handlePrethiHover = () => {
-    if (audioRef.current) {
-      audioRef.current.play().catch(console.error);
-    }
+     if (audioRef.current) {
+    const audio = audioRef.current;
+
+    // Start playing
+    audio.play().catch(console.error);
+
+    // Stop after 5 seconds no matter what
+    setTimeout(() => {
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0; // resets to the beginning
+      }
+    }, 5000);
+  }
   };
 
   
