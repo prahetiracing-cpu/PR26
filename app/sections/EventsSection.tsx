@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
 
 // Hex Color Definitions
 const COLOR_BLACK = '#000000';
@@ -163,10 +162,8 @@ export default function EventsSection() {
 
                     {/* Center Image */}
                     <div className="flex items-center justify-center h-auto w-full shadow-2xl rounded-2xl z-10 transition-all duration-700 hover:shadow-red-500/50 hover:border-red-500">
-                        <Image
+                        <img
                             src={centralImageSrc}
-                            width={2000}
-              height={2000}
                             alt="Central recruitment focus image"
                             className="w-full h-full rounded-2xl"
                             

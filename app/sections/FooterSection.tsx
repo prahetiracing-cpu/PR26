@@ -1,22 +1,15 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Mail, Instagram, Youtube } from "lucide-react";
 
+// Dynamically import MapContainer to disable SSR
+const MapComponent = dynamic(() => import("./MapContainer"), { ssr: false });
+
 const FooterSection = () => {
-  const position: [number, number] = [17.390663, 78.316905]; // Example: Hyderabad
-
-  const markerIcon = new L.Icon({
-    iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-  });
-
   return (
-    <footer className="bg-white text-gray-800  px-6 md:px-16 border-t border-gray-200 shadow-inner">
+    <footer className="bg-white text-gray-800 px-6 md:px-16 border-t border-gray-200 shadow-inner">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
         
         {/* Left side - Car Image */}
@@ -24,7 +17,7 @@ const FooterSection = () => {
           <Image
             src="/carSticker.png"
             width={500}
-              height={100}
+            height={100}
             alt="Car Sticker"
             className="w-56 md:w-100 md:h-90 object-contain transition-transform hover:scale-105 duration-300"
           />
@@ -36,26 +29,13 @@ const FooterSection = () => {
         {/* Right side - Map and Icons */}
         <div className="flex flex-col md:w-1/2 md:mt-20 justify-center items-center space-y-5">
           <div className="w-84 md:w-100 md:h-70 h-50 rounded-xl overflow-hidden border border-gray-300 shadow-md">
-            <MapContainer
-              center={position}
-              zoom={13}
-              scrollWheelZoom={false}
-              className="h-full w-full"
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={position} icon={markerIcon}>
-                <Popup>Event Location</Popup>
-              </Marker>
-            </MapContainer>
+            <MapComponent />
           </div>
 
           {/* Social Icons */}
           <div className="flex space-x-6 justify-center items-center">
             <a
-              href="https://www.youtube.com/@prahetiracing"
+              href="https://www.instagram.com/prahetiracing"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-pink-500 transition-colors duration-200"

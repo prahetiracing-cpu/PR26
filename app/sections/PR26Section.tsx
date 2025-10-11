@@ -177,7 +177,7 @@ export default function PR26Section() {
               height={150}
 
             
-              src="./pr26.png"
+              src="/pr26.png"
               alt="PR-26 Car"
               className="md:w-144 md:h-144 w-100 h-100"
             />

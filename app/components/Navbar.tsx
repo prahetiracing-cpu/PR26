@@ -1,8 +1,6 @@
 "use client";
 import { Link } from "react-scroll";
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
-
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -100,11 +98,9 @@ export default function Navbar() {
           
           {/* Left Logo */}
           <div className="flex items-center justify-start pl-[60px]">
-            <Image
-              src="logo.png" 
+            <img
+              src="./logo.png" 
               alt="Praheti Racing Logo" 
-              width={500}
-              height={100}
               className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
@@ -130,11 +126,9 @@ export default function Navbar() {
 
           {/* Right Logo */}
           <div className="flex items-center justify-end pr-[60px]">
-            <Image
-              src="logo2.png" 
+            <img
+              src="./logo2.png" 
               alt="Secondary Logo" 
-               width={500}
-              height={100}
               className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
@@ -145,11 +139,9 @@ export default function Navbar() {
         <div className="hidden max-md:flex h-full w-full px-5 items-center justify-between relative">
           {/* Left Logo */}
           <div className="flex items-center">
-            <Image
-              src="/logo.png" 
+            <img
+              src="./logo.png" 
               alt="Praheti Racing Logo" 
-               width={500}
-              height={100}
               className="h-[60px] w-auto object-contain"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
@@ -157,11 +149,9 @@ export default function Navbar() {
 
           {/* Right Logo */}
           <div className="flex items-center">
-            <Image
-              src="/logo2.png" 
+            <img
+              src="./logo2.png" 
               alt="Secondary Logo" 
-              width={500}
-              height={100}
               className="h-[60px] w-auto object-contain"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
