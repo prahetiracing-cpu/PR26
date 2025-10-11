@@ -24,8 +24,8 @@ const FooterSection = () => {
         <div className="flex flex-col md:w-1/2 items-center md:items-start space-y-3">
           <Image
             src="/carSticker.png"
-            width={52000}
-              height={2000}
+            width={500}
+              height={100}
             alt="Car Sticker"
             className="w-56 md:w-100 md:h-90 object-contain transition-transform hover:scale-105 duration-300"
           />
