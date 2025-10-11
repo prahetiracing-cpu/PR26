@@ -1,9 +1,10 @@
 "use client";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-// @ts-ignore
+// @ts-expect-error
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import Image from "next/image";
 import { Mail, Instagram, Youtube } from "lucide-react";
 
 const FooterSection = () => {
@@ -21,8 +22,10 @@ const FooterSection = () => {
         
         {/* Left side - Car Image */}
         <div className="flex flex-col md:w-1/2 items-center md:items-start space-y-3">
-          <img
+          <Image
             src="/carSticker.png"
+            width={52000}
+              height={2000}
             alt="Car Sticker"
             className="w-56 md:w-100 md:h-90 object-contain transition-transform hover:scale-105 duration-300"
           />

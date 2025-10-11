@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 // Hex Color Definitions:
 const COLOR_BLACK = '#000000';
@@ -171,7 +172,11 @@ export default function PR26Section() {
           <div className="relative md:w-144 md:h-144 w-100 h-100  flex items-center justify-center">
             {/* Rotating border */}
             
-            <img
+            <Image
+            width={150}
+              height={150}
+
+            
               src="./pr26.png"
               alt="PR-26 Car"
               className="md:w-144 md:h-144 w-100 h-100"
@@ -194,7 +199,7 @@ export default function PR26Section() {
             className="text-lg sm:text-xl max-w-4xl mx-auto mb-6 leading-relaxed"
             style={{ color: COLOR_BLACK }}
           >
-            Every detail of <strong style={{ color: COLOR_RED }}>PR-26</strong> is engineered with purpose. From the lightest weld to the sharpest corner, it's a car born from obsession where design, performance, and innovation converge into one seamless form.
+            Every detail of <strong style={{ color: COLOR_RED }}>PR-26</strong> is engineered with purpose. From the lightest weld to the sharpest corner, it&apos;s a car born from obsession where design, performance, and innovation converge into one seamless form.
           </p>
           <p 
             className="text-xl font-black uppercase tracking-widest"
@@ -245,7 +250,7 @@ export default function PR26Section() {
             className="text-lg font-medium max-w-3xl mx-auto leading-relaxed"
             style={{ color: COLOR_BLACK }}
           >
-            <strong style={{ color: COLOR_RED }}>PR-26</strong> is more than a car it's a statement. A symbol of teamwork, innovation, and the relentless pursuit of excellence.
+            <strong style={{ color: COLOR_RED }}>PR-26</strong> is more than a car it&apos;s a statement. A symbol of teamwork, innovation, and the relentless pursuit of excellence.
           </p>
         </div>
 

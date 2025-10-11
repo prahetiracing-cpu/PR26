@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -114,9 +115,11 @@ export default function AboutSection() {
           {/* Image */}
           <div ref={imageRef} className="relative group flex justify-center">
             <div className="w-80 h-60 sm:w-[26rem] sm:h-[18rem] bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 rounded-2xl shadow-2xl overflow-hidden relative">
-              <img
+              <Image
                 src="./car.jpg"
                 alt="Racing Car"
+                width={2000}
+                height={2000}
                 className="w-full h-full object-cover opacity-90"
               />
               {/* Overlay lines */}

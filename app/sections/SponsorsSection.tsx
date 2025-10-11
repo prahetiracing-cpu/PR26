@@ -1,5 +1,6 @@
 "use client";
 import { useMemo } from "react";
+import Image from "next/image";
 
 export default function SponsorsSection() {
   const row1 = useMemo(() => [
@@ -35,7 +36,9 @@ export default function SponsorsSection() {
         {/* First set of items */}
         {items.map((imageUrl, idx) => (
           <div key={`${key}-first-${idx}`} className="flex-shrink-0">
-            <img
+            <Image
+            width={500}
+              height={100}
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
               className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-110"
@@ -45,7 +48,9 @@ export default function SponsorsSection() {
         {/* Second set of items for seamless loop */}
         {items.map((imageUrl, idx) => (
           <div key={`${key}-second-${idx}`} className="flex-shrink-0">
-            <img
+            <Image
+            width={500}
+              height={100}
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
               className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-110"
@@ -55,7 +60,9 @@ export default function SponsorsSection() {
         {/* Third set of items for extra smoothness */}
         {items.map((imageUrl, idx) => (
           <div key={`${key}-third-${idx}`} className="flex-shrink-0">
-            <img
+            <Image
+            width={500}
+              height={100}
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
               className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-110"
