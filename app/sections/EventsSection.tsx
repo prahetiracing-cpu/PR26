@@ -108,9 +108,19 @@ export default function EventsSection() {
 
     const handleClick = () => {
         if (audioRef2.current) {
-            audioRef2.current.currentTime = 0;
-            audioRef2.current.play().catch(console.error);
-        }
+    const audio = audioRef2.current;
+
+    // Start playing
+    audio.play().catch(console.error);
+
+    // Stop after 5 seconds no matter what
+    setTimeout(() => {
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0; // resets to the beginning
+      }
+    }, 2000);
+    }
     }
     useEffect(() => {
         const timeout = setTimeout(() => setExpanded(true), 500);
@@ -139,7 +149,7 @@ export default function EventsSection() {
                 {/* Main Heading with 'NOW' in red */}
                 <div className="text-center mb-12 pb-4">
                     <h2 className=" md:text-6xl text-4xl font-black tracking-wider text-black mb-4">
-                        RECRUITMENTS OPEN <span className="text-white bg-red-500 px-5 py-1 rounded-xl shadow-lg">NOW</span>
+                        RECRUITMENTS OPEN <a href="https://forms.gle/99zMzTsuwzNApFKb8"><span onClick={handleClick} className="text-white bg-red-500 px-5 py-1 rounded-xl shadow-lg">NOW</span></a>
                     </h2>
                     <div className="w-32 h-2 mx-auto bg-red-500 rounded-full mt-2"></div>
                 </div>
