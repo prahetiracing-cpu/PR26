@@ -164,7 +164,7 @@ export default function AboutSection() {
               <div className="absolute bottom-1/3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent transform rotate-12"></div>
               
             </div>
-            <div className="md:flex sm:hidden w-80 h-60 sm:w-[26rem] sm:h-[18rem] bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 rounded-2xl shadow-2xl overflow-hidden relative">
+            <div className="md:flex hidden w-80 h-60 sm:w-[26rem] sm:h-[18rem] bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 rounded-2xl shadow-2xl overflow-hidden relative">
               <img
                 src="/car.jpg"
                 alt="Racing Car"

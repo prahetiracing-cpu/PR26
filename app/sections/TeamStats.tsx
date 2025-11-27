@@ -138,10 +138,10 @@ export default function App() {
 
   const stats: Stat[] = [
     { label: 'Years of Experience', value: 14, suffix: '+', duration: 2000 },
-    { label: 'Team Members', value: 40, suffix: '+', duration: 2400 },
-    { label: 'Vehicles Built', value: 5, suffix: '+', duration: 1600 },
+    { label: 'Team Members', value: 100, suffix: '+', duration: 2400 },
+    { label: 'Vehicles Built', value: 7, suffix: '+', duration: 1600 },
     { label: 'Competitions', value: 10, suffix: '+', duration: 2200 },
-    { label: 'Awards', value: 5, suffix: '+', duration: 1800 }
+    { label: 'Awards', value: 6, suffix: '+', duration: 1800 }
   ];
 
   // Intersection Observer for triggering animations when section enters viewport
