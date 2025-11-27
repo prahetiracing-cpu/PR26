@@ -20,7 +20,7 @@ export default function AboutSection() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
-        start: "top 80%",
+        start: "top 10%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
       },

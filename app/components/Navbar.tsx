@@ -98,12 +98,14 @@ export default function Navbar() {
           
           {/* Left Logo */}
           <div className="flex items-center justify-start pl-[60px]">
+            <Link to="home">
             <img
               src="./logo.png" 
               alt="Praheti Racing Logo" 
               className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
+            </Link>
           </div>
 
           {/* Center Nav Links */}
@@ -126,12 +128,14 @@ export default function Navbar() {
 
           {/* Right Logo */}
           <div className="flex items-center justify-end pr-[60px]">
+            <Link to="pr">
             <img
               src="./logo2.png" 
               alt="Secondary Logo" 
               className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
+            </Link>
           </div>
         </div>
 
@@ -139,22 +143,26 @@ export default function Navbar() {
         <div className="hidden max-md:flex h-full w-full px-5 items-center justify-between relative">
           {/* Left Logo */}
           <div className="flex items-center">
+            <Link to="home">
             <img
               src="./logo.png" 
               alt="Praheti Racing Logo" 
               className="h-[60px] w-auto object-contain"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
+            </Link>
           </div>
 
           {/* Right Logo */}
           <div className="flex items-center">
+            <Link to ='pr'>
             <img
               src="./logo2.png" 
               alt="Secondary Logo" 
               className="h-[60px] w-auto object-contain"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))' }}
             />
+            </Link>
           </div>
 
           {/* Hamburger Menu Icon - Right side */}
