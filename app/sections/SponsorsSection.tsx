@@ -70,7 +70,7 @@ export default function SponsorsSection() {
     <section id="sponsors" className="relative w-full py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-4xl md:text-5xl font-black tracking-wider mb-10">
-          <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">Sponsors</span>
+          <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">Our Sponsors</span>
         </h2>
 
         {/* Marquee rows */}

@@ -93,14 +93,14 @@ export default function AboutSection() {
             </h3>
 
             <p className="text-xl text-gray-700 leading-relaxed font-medium">
-              Praheti Racing — Engineering Speed & Innovation Since 2012
+              Praheti Racing — <span className="text-[#000000]">Racing Since</span> &nbsp;  <span className="text-[#ff0000]">2012</span>
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed mt-4">
               Praheti Racing is an independent and student-driven motorsport organization
-              from Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad. With a
+              from Chaitanya Bharathi Institute of Technology, Hyderabad. With a
               legacy spanning over a decade, we are a team of 50 passionate and
-              performance-driven students working under a structured 3-tier technical and
+              performance driven students working under a structured 3-tier technical and
               management system.
             </p>
 
@@ -108,8 +108,8 @@ export default function AboutSection() {
               Representing diverse engineering disciplines, we collaborate with a single
               mission: pushing boundaries in global student motorsport. Since our
               inception in 2012, we have contributed to advancing the Indian automotive
-              sector by designing, developing, and innovating high-performance
-              formula-style race machines that reflect precision engineering and
+              sector by designing, developing, and innovating high performance
+              formula style race machines that reflect precision engineering and
               sustainable design practices.
             </p>
 
@@ -118,7 +118,7 @@ export default function AboutSection() {
               to conceive, design, fabricate, and race cutting-edge formula student cars.
               The team is rigorously evaluated across dynamic track events, vehicle
               performance, engineering design, cost & manufacturing strategies, and driver
-              skill — shaping members into world-class engineers and leaders with strong
+              skill shaping members into world class engineers and leaders with strong
               technical and entrepreneurial capabilities.
             </p>
 
