@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 
-const images = Array(10).fill("/logo.png");
+// const images = Array(10).fill("/logo.png");
+const images = Array.from({ length: 6 }, (_, i) => `/events/event${i + 1}.jpg`);
 
 
 export default function EventsSection() {
@@ -22,7 +23,7 @@ export default function EventsSection() {
       className="min-h-screen flex flex-col items-center px-6 py-20 font-sans bg-white"
     >
       <div className="max-w-7xl w-full mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10 tracking-wide">
+        <h2 className="text-3xl font-bold text-[#ff0000] text-center mb-10 tracking-wide">
           PAST EVENTS
         </h2>
 

@@ -38,7 +38,7 @@ export default function SponsorsSection() {
             <img
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
-              className="h-20 md:h-25 w-auto object-contain transition-all duration-300 hover:scale-110"
+              className="h-25 md:h-30 w-auto object-contain transition-all duration-300 hover:scale-110"
             />
           </div>
         ))}
@@ -48,7 +48,7 @@ export default function SponsorsSection() {
             <img
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
-              className="h-20 md:h-25 w-auto object-contain transition-all duration-300 hover:scale-110"
+              className="h-25 md:h-30 w-auto object-contain transition-all duration-300 hover:scale-110"
             />
           </div>
         ))}
@@ -58,7 +58,7 @@ export default function SponsorsSection() {
             <img
               src={imageUrl}
               alt={`Sponsor ${idx + 1}`}
-              className="h-20 md:h-25 w-auto object-contain transition-all duration-300 hover:scale-110"
+              className="h-25 md:h-30 w-auto object-contain transition-all duration-300 hover:scale-110"
             />
           </div>
         ))}

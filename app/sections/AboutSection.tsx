@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Instagram, Linkedin, Mail, Youtube } from "lucide-react";
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -122,14 +123,14 @@ export default function AboutSection() {
               technical and entrepreneurial capabilities.
             </p>
 
-            <div className="flex items-center gap-6 mt-6">
+            <div className="flex justify-center items-center gap-6 mt-6">
               <a
                 href="https://www.instagram.com/prahetiracing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                Follow us on Instagram
+                <Instagram size={26} />
               </a>
               <a
                 href="mailto:prahetiracing@cbit.ac.in"
@@ -137,7 +138,15 @@ export default function AboutSection() {
                 rel="noopener noreferrer"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                Contact us by Mail
+                <Mail size={26} />
+              </a>
+               <a
+                href="https://www.linkedin.com/company/prahetiracing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                <Linkedin size={26} />
               </a>
               <a
                 href="https://www.youtube.com/@prahetiracing"
@@ -145,7 +154,7 @@ export default function AboutSection() {
                 rel="noopener noreferrer"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                Watch on YouTube
+                <Youtube size={26} />
               </a>
             </div>
 
@@ -166,7 +175,7 @@ export default function AboutSection() {
             </div>
             <div className="md:flex hidden w-80 h-60 sm:w-[26rem] sm:h-[18rem] bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 rounded-2xl shadow-2xl overflow-hidden relative">
               <img
-                src="/car.jpg"
+                src="/car2.jpg"
                 alt="Racing Car"
                 className="w-full h-full object-cover opacity-90"
               />
