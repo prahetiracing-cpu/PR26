@@ -14,18 +14,6 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Initialize audio
-  useEffect(() => {
-    audioRef.current = new Audio('/click.wav');
-    audioRef.current.volume = 0.9; // Set volume to 50%
-    
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
 
   // Click sound handler
   const playClickSound = () => {

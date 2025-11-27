@@ -20,7 +20,7 @@ export default function AboutSection() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
-        start: "top 10%",
+        start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
@@ -92,28 +92,79 @@ export default function AboutSection() {
               </span>
             </h3>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Praheti Racing is an independent student organisation in Chaitanya
-              Bharathi Institute of Technology, comprising of 50 students with a
-              structured 3-tier team system. Members from diverse engineering
-              disciplines unite with a shared passion for innovation in global
-              student motorsport. Since its inception in 2012, the organisation
-              has pioneered advancements in the Indian automotive sector through
-              the development and implementation of innovative technologies.
+            <p className="text-xl text-gray-700 leading-relaxed font-medium">
+              Praheti Racing — Engineering Speed & Innovation Since 2012
             </p>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
-              The Formula SAE competitions challenge university students to
-              conceive, design, fabricate, and compete with formula-style race
-              cars. Teams are evaluated on dynamic performance, design,
-              business strategy, and driver skill, providing a complete
-              engineering and entrepreneurial experience.
+            <p className="text-lg text-gray-600 leading-relaxed mt-4">
+              Praheti Racing is an independent and student-driven motorsport organization
+              from Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad. With a
+              legacy spanning over a decade, we are a team of 50 passionate and
+              performance-driven students working under a structured 3-tier technical and
+              management system.
             </p>
+
+            <p className="text-lg text-gray-600 leading-relaxed mt-4">
+              Representing diverse engineering disciplines, we collaborate with a single
+              mission: pushing boundaries in global student motorsport. Since our
+              inception in 2012, we have contributed to advancing the Indian automotive
+              sector by designing, developing, and innovating high-performance
+              formula-style race machines that reflect precision engineering and
+              sustainable design practices.
+            </p>
+
+            <p className="text-lg text-gray-600 leading-relaxed mt-4">
+              Our participation in the prestigious Formula SAE competitions challenges us
+              to conceive, design, fabricate, and race cutting-edge formula student cars.
+              The team is rigorously evaluated across dynamic track events, vehicle
+              performance, engineering design, cost & manufacturing strategies, and driver
+              skill — shaping members into world-class engineers and leaders with strong
+              technical and entrepreneurial capabilities.
+            </p>
+
+            <div className="flex items-center gap-6 mt-6">
+              <a
+                href="https://www.instagram.com/prahetiracing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Follow us on Instagram
+              </a>
+              <a
+                href="mailto:prahetiracing@cbit.ac.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Contact us by Mail
+              </a>
+              <a
+                href="https://www.youtube.com/@prahetiracing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Watch on YouTube
+              </a>
+            </div>
+
           </div>
 
           {/* Image */}
-          <div ref={imageRef} className="relative group flex justify-center">
-            <div className="w-80 h-60 sm:w-[26rem] sm:h-[18rem] bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 rounded-2xl shadow-2xl overflow-hidden relative">
+          <div ref={imageRef} className="relative group flex md:flex-col justify-between">
+            <div className="w-80 h-60 sm:w-[26rem] md:mb-10 sm:h-[18rem] bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 rounded-2xl shadow-2xl overflow-hidden relative">
+              <img
+                src="/car.jpg"
+                alt="Racing Car"
+                className="w-full h-full object-cover opacity-90"
+              />
+              {/* Overlay lines */}
+              <div className="absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500/40 to-transparent transform -rotate-12"></div>
+              <div className="absolute bottom-1/3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent transform rotate-12"></div>
+              
+            </div>
+            <div className="md:flex sm:hidden w-80 h-60 sm:w-[26rem] sm:h-[18rem] bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 rounded-2xl shadow-2xl overflow-hidden relative">
               <img
                 src="/car.jpg"
                 alt="Racing Car"
