@@ -105,15 +105,6 @@ export default function PR26Section() {
 
   const specifications: SpecItemProps[] = [
     {
-      title: 'Chassis',
-      description: 'Engineered for strength, designed for lightness. A compact tubular space frame chassis, optimized through simulation and analysis for peak rigidity to weight ratio. Every weld is intentional every millimeter counts.',
-      specs: [
-        { label: 'Material', value: 'Mild Steel AISI 4130' },
-        { label: 'Length', value: '2000 mm' },
-        { label: 'Weight', value: 'Optimized for minimum mass and maximum stiffness' },
-      ],
-    },
-    {
       title: 'Powertrain',
       description: 'Precision-tuned performance. Powered by a KTM 390cc engine, refined to deliver smooth torque and high reliability. Seamlessly paired with electronic paddle shifters, ensuring rapid and consistent gear shifts on every lap.',
       specs: [
@@ -149,14 +140,6 @@ export default function PR26Section() {
         { label: 'Dashboard', value: 'Digital Interface with Driver Feedback System' },
       ],
     },
-    {
-      title: 'Weight & Balance',
-      description: 'Because lightness is speed. PR-26 sheds every unnecessary gram without compromise to safety or performance. A car born from obsession engineered for results.',
-      specs: [
-        { label: 'Target Weight', value: '~220 kg' },
-        { label: 'Weight Distribution', value: '45:55 (Front:Rear)' },
-      ],
-    },
   ];
 
   return (
@@ -184,7 +167,7 @@ export default function PR26Section() {
           </div>
         </div>
         {/* Header Section - Changed bottom border to RED */}
-        <div className="text-center mb-16 pb-8 border-b-4" style={{ borderColor: COLOR_RED }}>
+        <div className="text-center mb-16 pb-8" >
           <h1 
             className="text-5xl sm:text-6xl font-black mb-6 tracking-tight"
             style={{ color: COLOR_BLACK }}
@@ -195,6 +178,8 @@ export default function PR26Section() {
             className="w-24 h-1 mx-auto mb-6"
             style={{ backgroundColor: COLOR_RED }}
           ></div>
+
+          
           <p 
             className="text-lg sm:text-xl max-w-4xl mx-auto mb-6 leading-relaxed"
             style={{ color: COLOR_BLACK }}
@@ -212,11 +197,15 @@ export default function PR26Section() {
         {/* Technical Specifications Heading - Changed bottom border to RED */}
         <div className="mb-12">
           <h2 
-            className="text-center text-3xl sm:text-5xl font-black mb-8 pb-4 border-b-4 tracking-tighter"
+            className="text-center text-3xl sm:text-5xl font-black mb-8 pb-4 tracking-tighter"
             style={{ color: COLOR_BLACK, borderColor: COLOR_RED }}
           >
             TECHNICAL SPECIFICATIONS
           </h2>
+          <div 
+            className="w-24 h-1 mx-auto mb-6"
+            style={{ backgroundColor: COLOR_RED }}
+          ></div>
         </div>
 
         {/* Specifications Grid - Responsive layout for 1 or 2 columns */}
@@ -233,8 +222,8 @@ export default function PR26Section() {
 
         {/* Footer Statement - Changed top border to RED, divider to RED */}
         <div 
-          className="text-center mt-16 pt-12 border-t-4"
-          style={{ borderColor: COLOR_RED }}
+          className="text-center mt-16 pt-12 "
+          
         >
           <h3 
             className="text-3xl sm:text-4xl font-black mb-6"

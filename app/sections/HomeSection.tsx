@@ -272,7 +272,7 @@ export default function HomeSection() {
           <p className="text-xl md:text-2xl text-gray-600 font-light tracking-wide">
             Speed • Accuracy Engineered
           </p>
-          <div className="mt-4 w-24 h-0.5 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto"></div>
+          <div className="mt-4 w-24 h-0.5 bg-[#ff0000] mx-auto"></div>
         </div>
 
         {/* Recruitment Button with Liquid Effects */}

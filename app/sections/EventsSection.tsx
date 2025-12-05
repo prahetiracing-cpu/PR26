@@ -23,9 +23,14 @@ export default function EventsSection() {
       className="min-h-screen flex flex-col items-center px-6 py-20 font-sans bg-white"
     >
       <div className="max-w-7xl w-full mx-auto">
-        <h2 className="text-3xl font-bold text-[#ff0000] text-center mb-10 tracking-wide">
+        <h2 className="text-3xl sm:text-5xl font-bold text-[#ff0000] text-center mb-10 tracking-wide">
           PAST EVENTS
+          <div 
+            className="w-24 mt-4 h-1 mx-auto mb-6"
+            style={{ backgroundColor: '#ff0000' }}
+          ></div>
         </h2>
+        
 
         {/* Carousel Wrapper */}
         <div className="relative w-full max-w-4xl mx-auto overflow-hidden group">

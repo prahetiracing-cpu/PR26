@@ -78,7 +78,7 @@ export default function AboutSection() {
               ABOUT US
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-500 mx-auto"></div>
+          <div className="w-24 h-1 bg-[#ff0000] mx-auto"></div>
         </div>
 
         {/* Centered Content */}
@@ -86,15 +86,15 @@ export default function AboutSection() {
           {/* Text */}
           <div ref={textRef} className="max-w-xl text-center space-y-6">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-wide">
-              Speed Meets
+              Racing Since
               <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
                 {" "}
-                Innovation
+                2012
               </span>
             </h3>
 
             <p className="text-xl text-gray-700 leading-relaxed font-medium">
-              Praheti Racing — <span className="text-[#000000]">Racing Since</span> &nbsp;  <span className="text-[#ff0000]">2012</span>
+              Praheti Racing — Speed Meets <span className="text-[#ff0000]">Innovation</span><span className="text-[#000000]"></span>
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed mt-4">
@@ -128,7 +128,7 @@ export default function AboutSection() {
                 href="https://www.instagram.com/prahetiracing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 font-semibold hover:underline"
+                className="text-[#ff0000] font-semibold hover:underline"
               >
                 <Instagram size={26} />
               </a>
@@ -136,7 +136,7 @@ export default function AboutSection() {
                 href="mailto:prahetiracing@cbit.ac.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 font-semibold hover:underline"
+                className="text-[#ff0000] font-semibold hover:underline"
               >
                 <Mail size={26} />
               </a>
@@ -144,7 +144,7 @@ export default function AboutSection() {
                 href="https://www.linkedin.com/company/prahetiracing/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 font-semibold hover:underline"
+                className="text-[#ff0000] font-semibold hover:underline"
               >
                 <Linkedin size={26} />
               </a>
@@ -152,7 +152,7 @@ export default function AboutSection() {
                 href="https://www.youtube.com/@prahetiracing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 font-semibold hover:underline"
+                className="text-[#ff0000] font-semibold hover:underline"
               >
                 <Youtube size={26} />
               </a>
@@ -193,7 +193,7 @@ export default function AboutSection() {
               What is Formula Student?
             </span>
           </h3>
-          <div className="mt-4 w-32 h-1 bg-gradient-to-r from-red-500 to-gray-500 rounded-full mx-auto"></div>
+          <div className="mt-4 w-32 h-1 bg-[#ff0000] rounded-full mx-auto"></div>
           <p className="mt-8 text-lg leading-relaxed text-gray-700 max-w-5xl mx-auto text-center">
             Formula Student is a prestigious international engineering
             competition where teams of students design, build, and race

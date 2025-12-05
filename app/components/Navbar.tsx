@@ -18,7 +18,7 @@ export default function Navbar() {
   // Click sound handler
   const playClickSound = () => {
     if (audioRef.current) {
-      audioRef.current.currentTime = 0; // Reset to beginning
+      audioRef.current.currentTime = 0; 
       audioRef.current.play().catch(console.error);
     }
   };
