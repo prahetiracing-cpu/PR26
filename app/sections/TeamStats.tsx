@@ -205,16 +205,10 @@ export default function App() {
           
           {/* Heading: Responsive sizing and Black text */}
           <h2 
-            className="text-5xl sm:text-6xl lg:text-8xl font-black text-[#000000] mb-4 tracking-tight"
+            className="text-5xl sm:text-6xl lg:text-8xl font-black text-[#ff0000] mb-4 tracking-tight"
           >
             OUR LEGACY
           </h2>
-          {/* Subheading: Black text and tracking */}
-          <p 
-            className="text-base sm:text-lg font-black text-[#000000] tracking-[0.3em] uppercase"
-          >
-            In Numbers
-          </p>
           
         </div>
         

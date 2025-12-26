@@ -74,7 +74,7 @@ export default function AboutSection() {
             ref={headingRef}
             className="text-5xl md:text-6xl font-black tracking-wider text-gray-900 mb-4"
           >
-            <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            <span className="text-black  bg-clip-text">
               ABOUT US
             </span>
           </h2>
@@ -85,17 +85,14 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-6xl">
           {/* Text */}
           <div ref={textRef} className="max-w-xl text-center space-y-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-wide">
-              Racing Since
+
+            <h2 className="text-xl text-gray-700 leading-relaxed font-medium">
+              Praheti Racing —  Racing Since
               <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
                 {" "}
                 2012
               </span>
-            </h3>
-
-            <p className="text-xl text-gray-700 leading-relaxed font-medium">
-              Praheti Racing — Speed Meets <span className="text-[#ff0000]">Innovation</span><span className="text-[#000000]"></span>
-            </p>
+            </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed mt-4">
               Praheti Racing is an independent and student-driven motorsport organization
@@ -136,7 +133,7 @@ export default function AboutSection() {
                 href="mailto:prahetiracing@cbit.ac.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#ff0000] font-semibold hover:underline"
+                className="text-black font-semibold hover:underline"
               >
                 <Mail size={26} />
               </a>
@@ -152,7 +149,7 @@ export default function AboutSection() {
                 href="https://www.youtube.com/@prahetiracing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#ff0000] font-semibold hover:underline"
+                className="text-black font-semibold hover:underline"
               >
                 <Youtube size={26} />
               </a>
@@ -189,7 +186,7 @@ export default function AboutSection() {
         {/* Formula Student Section */}
         <div className="w-full py-20 mt-20">
           <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 text-center">
-            <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r text-black bg-clip-text">
               What is Formula Student?
             </span>
           </h3>
